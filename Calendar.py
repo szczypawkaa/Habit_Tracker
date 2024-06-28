@@ -21,6 +21,7 @@ class Day:
 class Calendar:
     def __init__(self):
         self._list_of_days = []
+        self.current_day = None
 
     def list_of_days(self):
         return self._list_of_days

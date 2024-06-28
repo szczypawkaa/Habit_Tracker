@@ -19,7 +19,6 @@ class Habit:
         def set_frequency(self, new_f):
             self._frequency = new_f
 
-
         def set_status(self):
             self._done = not self._done
 
