@@ -1,21 +1,21 @@
 class Day:
-    def __init__(self, date, habits = []):
+    def __init__(self, date, habits=None):
         self._date = date
-        self._list_of_habits = habits
+        self._list_of_habits = habits if habits is not None else []
 
-    def date(self):
+    def get_date(self):
         return self._date
 
-    def list_of_habits(self):
+    def get_list_of_habits(self):
         return self._list_of_habits
 
     def add_habit(self, habit):
-        list_of_habits.append(habit)
+        #dostaję się w ten sposób ponieważ to zmienna private klasy
+        self._list_of_habits.append(habit)
 
     def remove_habit(self, habit):
-    # nie usuwa wstecz tylko następne i obecne wystąpienie
+        # nie usuwa wstecz tylko następne i obecne wystąpienie
         pass
-
 
 
 class Calendar:
@@ -26,4 +26,4 @@ class Calendar:
         return self._list_of_days
 
     def add_day(self, day):
-        list_of_days.append(day)
+        self._list_of_days.append(day)
