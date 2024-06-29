@@ -7,20 +7,21 @@ class Habit:
         self._frequency = frequency
         self._done = False
 
-        def get_name(self):
-            return self._name
+    def get_name(self):
+        return self._name
 
-        def get_frequency(self):
-            return self._frequency
+    def get_frequency(self):
+        return self._frequency
 
-        def get_status(self):
-            return self._done
+    def get_status(self):
+        return self._done
 
-        def set_frequency(self, new_f):
-            self._frequency = new_f
+    def set_frequency(self, new_f):
+        self._frequency = new_f
 
-        def set_status(self):
-            self._done = not self._done
+    #co zrobić z ustawieniem frekwencji na taką samą?
+    def set_status(self):
+        self._done = not self._done
 
 
 class HabitTracker:
