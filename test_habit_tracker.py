@@ -41,8 +41,13 @@ def test_habit_set_frequency_to_the_same():
 
 def test_habit_set_status():
     habit = Habit("running", 3)
-    assert habit.get_status is False
+    assert habit.get_status() is False
     habit.set_status()
-    assert habit.get_status is True
+    assert habit.get_status() is True
     habit.set_status()
-    assert habit.get_status is False
+    assert habit.get_status() is False
+
+
+def test_create_day_without_habits():
+    monday = Day("1.01")
+    assert monday.get_date() == "1.01"

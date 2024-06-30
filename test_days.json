@@ -1,0 +1,19 @@
+{
+    "1":{
+        "day_of_the_challenge": 1,
+        "day_of_the_week": "monday",
+        "day": 1,
+        "month": "July",
+        "year": "2024",
+        "list_of_habits": []
+    },
+
+    "2":{
+        "day_of_the_challenge": 2,
+        "day_of_the_week": "tuesday",
+        "day": 2,
+        "month": "July",
+        "year": "2024",
+        "list_of_habits": []
+    }
+}
