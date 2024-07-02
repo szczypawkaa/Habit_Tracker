@@ -1,4 +1,6 @@
 {
+
+
     "1":{
         "day_of_the_challenge": 1,
         "day_of_the_week": "tuesday",
@@ -56,5 +58,5 @@
             }
         ]
 
-    },
+    }
 }

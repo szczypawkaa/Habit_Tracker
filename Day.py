@@ -1,10 +1,18 @@
 class Day:
-    def __init__(self, number, habits=None):
-        self._number = number  #który to już dzień chellengu
-        self._list_of_habits = habits if habits is not None else []
+    def __init__(self, number_in_challenge, date, habits):
+        self._number = number_in_challenge  #który to już dzień chellengu
+        self._date = date
+        #self._day_of_the_week  #z datatime
+        self._list_of_habits = habits
 
     def get_number(self):
         return self._number
+
+    def get_date(self):
+        return self._date
+
+    # def set_day_of_the_week(self):
+    #     pass
 
     def get_list_of_habits(self):
         return self._list_of_habits

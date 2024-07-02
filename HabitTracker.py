@@ -1,5 +1,5 @@
 class Habit:
-    def __init__(self, name, frequency=1):
+    def __init__(self, name, frequency=1, done=0):
         self._name = name
         #częstotliwość oznacza co ile dni ma się powtarzać
         # 1 = codziennie
@@ -31,7 +31,7 @@ class Habit:
 class HabitTracker:
     def __init__(self):
         self._list_of_days = []
-        self._list_of_the_all_habits = [] #żeby można było dodawać nowe, zmieniać częstotliwość
+        self._habits_frequency = {} #żeby można było dodawać nowe, zmieniać częstotliwość
         self.current_day = None  #zmienna publiczna
         #sprawdzać czy current_day jest zgodny z datatime i przesuwać dzień
 
