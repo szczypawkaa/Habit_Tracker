@@ -1,5 +1,5 @@
 from HabitTracker import Habit, HabitTracker
-from Calendar import Calendar, Day
+from Day import Day
 
 
 def test_create_habit():

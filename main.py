@@ -1,5 +1,5 @@
 from HabitTracker import Habit, HabitTracker
-from Calendar import Calendar, Day
+from Day import Day
 
 
 if __name__ == "__main__":

@@ -24,9 +24,22 @@ class Habit:
         self._done = not self._done
 
 
+#jak to zrobić?
+# wczytuję całego jsona, tworzę day1 od 1, day2 od 2....,
+# potem te dni dodaję do list of days
+
 class HabitTracker:
-    def __init__(self, calendar):
-        self._calendar = calendar
+    def __init__(self):
+        self._list_of_days = []
+        self._list_of_the_all_habits = [] #żeby można było dodawać nowe, zmieniać częstotliwość
+        self.current_day = None  #zmienna publiczna
+        #sprawdzać czy current_day jest zgodny z datatime i przesuwać dzień
+
+    def get_list_of_days(self):
+        return self._list_of_days
+
+    def add_day(self, day):
+        self._list_of_days.append(day)
 
     def add_habit(self):
         pass
@@ -34,8 +47,8 @@ class HabitTracker:
     def tick_a_habit(self, habit):
         pass
 
-    def show_progress(self):
-        pass
+    # def show_progress(self):
+    #     pass
 
-    def show_strike(self):
-        pass
+    # def show_strike(self):
+    #     pass
