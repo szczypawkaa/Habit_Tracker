@@ -1,3 +1,7 @@
+import json
+from Day import Day
+
+
 class Habit:
     def __init__(self, name, frequency=1, done=0):
         self._name = name
@@ -52,3 +56,21 @@ class HabitTracker:
 
     # def show_strike(self):
     #     pass
+
+    def create_days_from_json(self, filename):
+        with open(filename, "r") as filehandle:
+            data = json.load(filehandle)
+        for key in data.keys():
+            new_day_of_the_challenge = data[key]["day_of_the_challenge"]
+            # new_day_of_the_week = data[key]["day_of_the_week"]
+            new_date = data[key]["date"]
+            new_list_of_elements_for_habits = data[key]["list_of_habits"]
+            real_habits = []
+            for element in new_list_of_elements_for_habits:
+                name = element["name"]
+                frequency = element["frequency"]
+                done = element["done"]
+                new_habit = Habit(name, frequency, done)
+                real_habits.append(new_habit)
+            day = Day(new_day_of_the_challenge, new_date, real_habits)
+            self._list_of_days.append(day)

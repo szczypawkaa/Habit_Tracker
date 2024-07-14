@@ -50,22 +50,7 @@ def test_habit_set_status():
 
 
 def test_create_days_from_json_file():
-    with open("test_days.json", "r") as filehandle:
-        data = json.load(filehandle)
-    days = []
-    for key in data.keys():
-        new_day_of_the_challenge = data[key]["day_of_the_challenge"]
-        # new_day_of_the_week = data[key]["day_of_the_week"]
-        new_date = data[key]["date"]
-        new_list_of_elements_for_habits = data[key]["list_of_habits"]
-        real_habits = []
-        for element in new_list_of_elements_for_habits:
-            name = element["name"]
-            frequency = element["frequency"]
-            done = element["done"]
-            new_habit = Habit(name, frequency, done)
-            real_habits.append(new_habit)
-        day = Day(new_day_of_the_challenge, new_date, real_habits)
-        days.append(day)
-
-    assert len(days) == 3
+    habit_tr = HabitTracker()
+    habit_tr.create_days_from_json("test_days.json")
+    length = len(habit_tr.get_list_of_days())
+    assert length == 3
