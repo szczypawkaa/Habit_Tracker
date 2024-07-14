@@ -1,4 +1,5 @@
 import json
+import datatime
 from Day import Day
 
 
@@ -49,6 +50,17 @@ class HabitTracker:
         pass
 
     def tick_a_habit(self, habit):
+        habit.set_status()
+
+    def set_current_day(self):
+        latest_day = None
+        today = datatime.datatime.now().strftime("%x")
+        if not self._list_of_days.empty():
+            latest_day = self._list_of_days[-1]
+        if (latest_day.get_date() != today):
+            self.create_days_till_today(today)
+
+    def create_days_till_today(self, today):
         pass
 
     # def show_progress(self):
@@ -76,7 +88,6 @@ class HabitTracker:
             self._list_of_days.append(day)
 
     def save_days_to_json(self, filename):
-
         json_dict = {}
         for day in self._list_of_days:
             formated_habits = []
@@ -96,3 +107,6 @@ class HabitTracker:
 
         with open(filename, "w") as filehandle:
             json.dump(json_dict, filehandle, indent=4)
+
+    def add_days_till_today_to_json(self, filename):
+        pass
