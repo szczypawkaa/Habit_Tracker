@@ -74,3 +74,25 @@ class HabitTracker:
                 real_habits.append(new_habit)
             day = Day(new_day_of_the_challenge, new_date, real_habits)
             self._list_of_days.append(day)
+
+    def save_days_to_json(self, filename):
+
+        json_dict = {}
+        for day in self._list_of_days:
+            formated_habits = []
+            for habit in day.get_list_of_habits():
+                habit_dict = {
+                    "name": habit.get_name(),
+                    "frequency": habit.get_frequency(),
+                    "done": habit.get_status()
+                }
+                formated_habits.append(habit_dict)
+
+            json_dict[day.get_number()] = {
+                "day_of_the_challenge": day.get_number(),
+                "date": day.get_date(),
+                "list_of_habits": formated_habits
+            }
+
+        with open(filename, "w") as filehandle:
+            json.dump(json_dict, filehandle, indent=4)

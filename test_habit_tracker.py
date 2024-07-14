@@ -1,6 +1,4 @@
 from HabitTracker import Habit, HabitTracker
-from Day import Day
-import json
 
 
 def test_create_habit():
@@ -53,4 +51,15 @@ def test_create_days_from_json_file():
     habit_tr = HabitTracker()
     habit_tr.create_days_from_json("test_days.json")
     length = len(habit_tr.get_list_of_days())
+    assert length == 3
+
+
+def test_save_days_to_json_file():
+    habit_tr = HabitTracker()
+    habit_tr.create_days_from_json("test_days.json")
+    habit_tr.save_days_to_json("saved_days.json")
+
+    habit_tr_2 = HabitTracker()
+    habit_tr_2.create_days_from_json("saved_days.json")
+    length = len(habit_tr_2.get_list_of_days())
     assert length == 3

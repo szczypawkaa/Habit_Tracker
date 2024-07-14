@@ -1,57 +1,45 @@
 {
-    "1":{
+    "1": {
         "day_of_the_challenge": 1,
         "date": "2024-07-02",
-        "list_of_habits":
-        [
-
+        "list_of_habits": [
             {
                 "name": "running",
                 "frequency": 1,
-                "done": 0
+                "done": false
             },
-
             {
                 "name": "swimming",
                 "frequency": 2,
-                "done": 0
+                "done": false
             }
         ]
-
     },
-
-    "2":{
+    "2": {
         "day_of_the_challenge": 2,
         "date": "2024-07-03",
-        "list_of_habits":
-        [
-
+        "list_of_habits": [
             {
                 "name": "running",
                 "frequency": 1,
-                "done": 0
+                "done": false
             }
         ]
     },
-
-    "3":{
+    "3": {
         "day_of_the_challenge": 3,
         "date": "2024-07-04",
-        "list_of_habits":
-        [
-
+        "list_of_habits": [
             {
                 "name": "running",
                 "frequency": 1,
-                "done": 0
+                "done": false
             },
-
             {
                 "name": "swimming",
                 "frequency": 2,
-                "done": 0
+                "done": false
             }
         ]
-
     }
 }
