@@ -1,5 +1,5 @@
 import json
-import datatime
+import datetime
 from Day import Day
 
 
@@ -53,15 +53,21 @@ class HabitTracker:
         habit.set_status()
 
     def set_current_day(self):
+        # format daty year-month-day
         latest_day = None
-        today = datatime.datatime.now().strftime("%x")
-        if not self._list_of_days.empty():
+        # today = datatime.datatime.now().strftime("%x")
+        today = datetime.date.today()
+        if not self._list_of_days.empty(): #czy to potrzebne??
             latest_day = self._list_of_days[-1]
-        if (latest_day.get_date() != today):
-            self.create_days_till_today(today)
+            latest_day = datetime.datetime.strptime(latest_day.get_date(), "%Y-%m-%D")
+        if (latest_day != today):
+            self.create_days_till_today(latest_day, today)
 
-    def create_days_till_today(self, today):
-        pass
+    def create_days_till_today(self, latest_day, today):
+        delta = datetime.timedelta(days=1)
+        while (latest_day <= today):
+            latest_day += delta
+
 
     # def show_progress(self):
     #     pass
