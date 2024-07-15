@@ -62,4 +62,4 @@ def test_save_days_to_json_file():
     habit_tr_2 = HabitTracker()
     habit_tr_2.create_days_from_json("saved_days.json")
     length = len(habit_tr_2.get_list_of_days())
-    assert length == 3
+    assert length == 5

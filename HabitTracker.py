@@ -54,18 +54,23 @@ class HabitTracker:
 
     def set_current_day(self):
         # format daty year-month-day
-        latest_day = None
+
         # today = datatime.datatime.now().strftime("%x")
         today = datetime.date.today()
-        if not self._list_of_days.empty(): #czy to potrzebne??
-            latest_day = self._list_of_days[-1]
-            latest_day = datetime.datetime.strptime(latest_day.get_date(), "%Y-%m-%D")
+        latest_day = self._list_of_days[-1]
+        latest_day_num = latest_day.get_number()
+        latest_day = datetime.datetime.strptime(latest_day.get_date(), "%Y-%m-%d").date()
         if (latest_day != today):
-            self.create_days_till_today(latest_day, today)
+            self.create_days_till_today(latest_day, latest_day_num, today)
 
-    def create_days_till_today(self, latest_day, today):
+    def create_days_till_today(self, latest_day, latest_day_num, today):
         delta = datetime.timedelta(days=1)
+        latest_day += delta
+        latest_day_num += 1
         while (latest_day <= today):
+            new_day = Day(latest_day_num, str(latest_day), [])
+            self.add_day(new_day)
+            latest_day_num += 1
             latest_day += delta
 
 
@@ -94,6 +99,7 @@ class HabitTracker:
             self._list_of_days.append(day)
 
     def save_days_to_json(self, filename):
+        self.set_current_day()
         json_dict = {}
         for day in self._list_of_days:
             formated_habits = []

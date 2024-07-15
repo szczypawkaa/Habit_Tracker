@@ -17,7 +17,7 @@
     },
     "2": {
         "day_of_the_challenge": 2,
-        "date": "2024-07-03",
+        "date": "2024-07-14",
         "list_of_habits": [
             {
                 "name": "running",
@@ -28,7 +28,7 @@
     },
     "3": {
         "day_of_the_challenge": 3,
-        "date": "2024-07-04",
+        "date": "2024-07-14",
         "list_of_habits": [
             {
                 "name": "running",
@@ -41,5 +41,15 @@
                 "done": false
             }
         ]
+    },
+    "4": {
+        "day_of_the_challenge": 4,
+        "date": "2024-07-15",
+        "list_of_habits": []
+    },
+    "5": {
+        "day_of_the_challenge": 5,
+        "date": "2024-07-16",
+        "list_of_habits": []
     }
 }
